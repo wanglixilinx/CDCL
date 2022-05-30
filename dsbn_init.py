@@ -1,12 +1,13 @@
 import torch
 import torch.nn as nn
 
+# load resnet imagenet weight
 def _update_initial_weights_dsbn(state_dict, num_classes=1000, num_domains=2):
     new_state_dict = state_dict.copy()
 
     for key, val in state_dict.items():
         update_dict = True
-
+        
         if (update_dict):
             if 'weight' in key:
                 for d in range(num_domains):
